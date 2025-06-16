@@ -1,0 +1,126 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+
+/* ChopTime Design System - Orange & Brown Theme */
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 25 25% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 25 25% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 25 25% 15%;
+
+    --primary: 18 100% 60%; /* Vibrant Orange */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 25 35% 45%; /* Warm Brown */
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 25 15% 96%;
+    --muted-foreground: 25 15% 45%;
+
+    --accent: 18 85% 65%; /* Light Orange */
+    --accent-foreground: 25 25% 15%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 15% 90%;
+    --input: 25 15% 90%;
+    --ring: 18 100% 60%;
+
+    --radius: 0.75rem;
+
+    /* ChopTime Custom Colors */
+    --choptime-orange: 18 100% 60%;
+    --choptime-orange-light: 18 85% 65%;
+    --choptime-brown: 25 35% 45%;
+    --choptime-brown-dark: 25 45% 35%;
+    --choptime-cream: 35 25% 95%;
+  }
+
+  .dark {
+    --background: 25 25% 8%;
+    --foreground: 0 0% 95%;
+
+    --card: 25 25% 10%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 25 25% 10%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 18 100% 60%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 25 35% 20%;
+    --secondary-foreground: 0 0% 95%;
+
+    --muted: 25 25% 15%;
+    --muted-foreground: 25 15% 65%;
+
+    --accent: 18 85% 65%;
+    --accent-foreground: 25 25% 15%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 25 25% 20%;
+    --input: 25 25% 20%;
+    --ring: 18 100% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(135deg, hsl(var(--choptime-orange)), hsl(var(--choptime-orange-light)));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  .bg-gradient-choptime {
+    background: linear-gradient(135deg, hsl(var(--choptime-orange)), hsl(var(--choptime-orange-light)));
+  }
+  
+  .border-gradient {
+    border-image: linear-gradient(135deg, hsl(var(--choptime-orange)), hsl(var(--choptime-brown))) 1;
+  }
+
+  /* Mobile-specific utilities */
+  .pb-safe-area-inset-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .pt-safe-area-inset-top {
+    padding-top: env(safe-area-inset-top);
+  }
+}
+
+/* Mobile app-like animations */
+@media (max-width: 768px) {
+  .card-mobile {
+    @apply rounded-xl shadow-sm border-0 bg-white;
+  }
+  
+  .button-mobile {
+    @apply rounded-full py-3 px-6 font-semibold;
+  }
+}
